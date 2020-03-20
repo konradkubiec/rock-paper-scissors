@@ -22,11 +22,6 @@ export default class GameEngine {
 			const numberOfNames = movesNames.length;
             moveName = movesNames[randomIndex % numberOfNames];
 		}
-		this.players = {
-			...{
-				[playerName]: moveName
-			}
-		};
 
 		this.movesInUse = {
 			...this.movesInUse, ...{
