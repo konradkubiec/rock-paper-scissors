@@ -35,7 +35,11 @@ function playRockPaperScissors(inputs) {
 		const aiName = `AI Player ${i+1}`;
 		output += `<li> <i>${aiName}</i> who played <i>${game.add(aiName)}</i></li>`;
 	}
-	output += `<li> And you played <i>${game.add(name, gesture)}</i></li></ul>`;
+	if(gesture === "Hold"){
+		output +=`<li> You decided to skipp this game.</li></ul>`
+	}else{
+		output += `<li> And you played <i>${game.add(name, gesture)}</i></li></ul>`;
+	}
 
 	const result = game.execute();
 	if (result === 'Tie!') {
