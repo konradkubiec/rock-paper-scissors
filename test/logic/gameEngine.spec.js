@@ -4,6 +4,11 @@ import {
 	PAPER,
 	SCISSORS
 } from '../../src/js/logic/rockPaperScissors';
+import {
+	SPOCK,
+	LIZZARD,
+	RULES
+} from "../../src/js/logic/rockPaperScissorsSpockLizard";
 
 const TIE = "Tie!",
 	PLAYER1 = "Player 1",
@@ -68,6 +73,58 @@ describe('Game', () => {
 			game.add(PLAYER1, ROCK);
 			game.add(PLAYER2, SCISSORS);
 			game.add(PLAYER3, PAPER);
+			const result = game.execute();
+
+			expect(result).toMatch(TIE);
+		});
+
+		it('should return player move', () => {
+			const game = new GameEngine();
+			const move = game.add(PLAYER1, SCISSORS);
+
+			expect(move).toMatch(SCISSORS);
+		});
+
+	});
+
+	describe('for Rock Paper Scissors Spock Lizard game rules', () => {
+		it('should provide "Player 1" as winner when: Scissors decapilates 2 Lizards (Player 2 & 3)', () => {
+			const game = new GameEngine(RULES);
+			game.add(PLAYER1, SCISSORS);
+			game.add(PLAYER2, LIZZARD);
+			game.add(PLAYER3, LIZZARD);
+			const result = game.execute();
+
+			expect(result).toMatch(PLAYER1);
+		});
+
+		it('should provide "Tie!" when moves are: Spock, Lizard, Paper, Scissors', () => {
+			const game = new GameEngine(RULES);
+			game.add(PLAYER1, SPOCK);
+			game.add(PLAYER2, LIZZARD);
+			game.add(PLAYER3, PAPER);
+			game.add(PLAYER4, SCISSORS);
+			const result = game.execute();
+
+			expect(result).toMatch(TIE);
+		});
+
+		it('should provide "Player 1" as winner with Spock when oponents: Rock, Scissors x2', () => {
+			const game = new GameEngine(RULES);
+			game.add(PLAYER1, SPOCK);
+			game.add(PLAYER2, ROCK);
+			game.add(PLAYER3, SCISSORS);
+			game.add(PLAYER4, SCISSORS);
+			const result = game.execute();
+
+			expect(result).toMatch(PLAYER1);
+		});
+
+		it('should provide "Tie!" when oponents: Rock x2, Scissors', () => {
+			const game = new GameEngine(RULES);
+			game.add(PLAYER1, ROCK);
+			game.add(PLAYER2, ROCK);
+			game.add(PLAYER3, SCISSORS);
 			const result = game.execute();
 
 			expect(result).toMatch(TIE);

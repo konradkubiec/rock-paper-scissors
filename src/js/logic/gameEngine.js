@@ -25,7 +25,7 @@ export default class GameEngine {
 		this.players = {
 			...{
 				[playerName]: moveName
-	}
+			}
 		};
 
 		this.movesInUse = {
