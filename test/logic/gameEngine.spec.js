@@ -54,6 +54,24 @@ describe('Game', () => {
 			expect(result).toMatch(PLAYER2);
 		});
 
+		it('should provide "Tie!" when: 2 players use same move', () => {
+			const game = new GameEngine();
+			game.add(PLAYER1, SCISSORS);
+			game.add(PLAYER2, SCISSORS);
+			const result = game.execute();
+
+			expect(result).toMatch(TIE);
+		});
+
+		it('should provide "Tie!" when 3 players pick 3 different moves', () => {
+			const game = new GameEngine();
+			game.add(PLAYER1, ROCK);
+			game.add(PLAYER2, SCISSORS);
+			game.add(PLAYER3, PAPER);
+			const result = game.execute();
+
+			expect(result).toMatch(TIE);
+		});
 	});
 
 });
