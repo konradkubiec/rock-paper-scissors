@@ -44,7 +44,7 @@ function playRockPaperScissors(inputs) {
 	} else {
 		output += `<p>And the winner is... <i><b>${result}!</b></i><br/>`;
 		if (result !== name) {
-			output += `Try your luck one more time <i>${result}</i>!</p>`;
+			output += `Try your luck one more time <i>${name}</i>!</p>`;
 		} else {
 			output += `Nice one <i>${result}</i>!</p>`;
 		}
