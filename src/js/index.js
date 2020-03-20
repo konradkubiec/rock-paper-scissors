@@ -8,6 +8,11 @@ import GameEngine from '../js/logic/gameEngine';
 
 logger('it works well!');
 
+const form = document.querySelector("#game");
+const log = document.querySelector("#log");
+const back = document.querySelector("#backToGame");
+let gamesCount = 0;
+
 /**
  * Based on inputs generate game and output text message with the result
  * @param {object} inputs 

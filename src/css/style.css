@@ -1,3 +1,11 @@
-h2 {
-	color: orange;
+.btn-primary {
+    background: blue;
+    border-color: blue;
+}
+.btn-outline-primary {
+    border-color: blue;
+    color: blue;
+}
+a {
+    color: blue;
 }

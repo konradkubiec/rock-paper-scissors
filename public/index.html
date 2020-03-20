@@ -1,13 +1,114 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Rock - Paper - Scissors</title>
-		<meta charset="UTF-8" />
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	</head>
-	<body>
-		<h1>You are ready to go! :)</h1>
-		<h2>Good luck!</h2>
-	</body>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-GB">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Rock - Paper - Scissors</title>
+	<meta name="description" content="">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-3.5.0.js"></script> <!-- production only -->
+</head>
+
+<body>
+	<!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+	<div class="container">
+		<h1>Rock Paper Scissors</h1>
+		<p><a href="/#game">Jump to main content &raquo;</a></p>
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Rules</h2>
+				<p><b>Rock paper scissors</b> [...] is a <a href="https://en.wikipedia.org/wiki/Hand_game"
+						title="Hand game">hand game</a> usually played between two people, in which each player
+					simultaneously forms one of three shapes with an outstretched hand. [...] It has only two possible
+					outcomes: a draw, or a win for one player and a loss for the other.
+				</p>
+				<p>This application gives a chance to play a digital version of this game:</p>
+				<ol>
+					<li>Set your Player name</li>
+					<li>Pick a number of opponents</li>
+					<li>Make your gesture choice</li>
+					<li>Hit "Play a game" button to see who won</li>
+				</ol>
+				<p><a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" role="button">View details at Wikipedia
+						&raquo;</a></p>
+			</div>
+			<div class="col-md-6">
+				<h2>Game</h2>
+				<form id="game">
+					<div class="mb-3">
+						<label for="email">Player name <span class="text-muted">(Optional)</span></label>
+						<input type="text" name="name" value="Human Player" class="form-control" id="email"
+							placeholder="Your Name">
+					</div>
+					<hr class="mb-4">
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							<h4 class="mb-3">Gestures:</h4>
+							<div class="custom-control custom-radio">
+								<input id="rock" name="gesture" type="radio" class="custom-control-input" checked=""
+									required="" value="Rock!">
+								<label class="custom-control-label" for="rock">Rock</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input id="paper" name="gesture" type="radio" class="custom-control-input" required=""
+									value="Paper!">
+								<label class="custom-control-label" for="paper">Paper</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input id="scissors" name="gesture" type="radio" class="custom-control-input"
+									required="" value="Scissors!">
+								<label class="custom-control-label" for="scissors">Scissors</label>
+							</div>
+						</div>
+
+						<div class="col-md-6 mb-3">
+							<h4 class="mb-3">AI players:</h4>
+							<div class="custom-control custom-radio">
+								<input id="singleEnemy" name="ai" type="radio" class="custom-control-input" checked=""
+									required="" value="1">
+								<label class="custom-control-label" for="singleEnemy">1</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input id="twoEnemies" name="ai" type="radio" class="custom-control-input" required=""
+									value="2">
+								<label class="custom-control-label" for="twoEnemies">2</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input id="threeEnemies" name="ai" type="radio" class="custom-control-input" required=""
+									value="3">
+								<label class="custom-control-label" for="threeEnemies">3</label>
+							</div>
+						</div>
+					</div>
+					<hr class="mb-4">
+					<button class="btn btn-primary btn-lg btn-block" type="submit">Play a game</button>
+					<hr class="mb-4">
+				</form>
+
+				<div id="log">
+					Play a game to see your score!
+				</div>
+				<hr class="mb-4">
+				<p>
+					<a class="btn btn-outline-primary btn-lg btn-block" href="#game" id="backToGame">Play one more
+						time</a>
+				</p>
+
+
+			</div>
+		</div>
+	</div> <!-- /container -->
+</body>
+
 </html>
