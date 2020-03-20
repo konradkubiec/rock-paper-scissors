@@ -52,3 +52,28 @@ function playRockPaperScissors(inputs) {
 
 	return output;
 }
+
+
+if (form !== null) {
+	form.addEventListener("submit", function (event) {
+		var data = new FormData(form);
+		let inputs = {};
+		for (const entry of data) {
+			inputs[entry[0]] = entry[1];
+		}
+
+		console.log(JSON.stringify(inputs, null, 4));
+		log.innerHTML = playRockPaperScissors(inputs);
+		log.focus();
+
+		event.preventDefault();
+	}, false);
+}
+
+if (back !== null) {
+	back.addEventListener("click", function () {
+		if (form !== null) {
+			form.focus();
+		}
+	}, false);
+}
